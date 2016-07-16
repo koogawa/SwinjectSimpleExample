@@ -13,6 +13,7 @@
 		219466AC1D3A2C8A000E41AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219466AB1D3A2C8A000E41AA /* Assets.xcassets */; };
 		219466AF1D3A2C8A000E41AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 219466AD1D3A2C8A000E41AA /* LaunchScreen.storyboard */; };
 		219466BA1D3A2C8B000E41AA /* SwinjectSimpleExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219466B91D3A2C8B000E41AA /* SwinjectSimpleExampleTests.swift */; };
+		6E21FF4FC984A4DAE7410F11 /* Pods_SwinjectSimpleExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B0CA31626B9B5E64C1B0DF /* Pods_SwinjectSimpleExampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		219466B51D3A2C8B000E41AA /* SwinjectSimpleExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwinjectSimpleExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		219466B91D3A2C8B000E41AA /* SwinjectSimpleExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSimpleExampleTests.swift; sourceTree = "<group>"; };
 		219466BB1D3A2C8B000E41AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26D3A7F1AE23FD4F7ED9ADE1 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectSimpleExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		633E3FF272505DF60584EC60 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectSimpleExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		E3B0CA31626B9B5E64C1B0DF /* Pods_SwinjectSimpleExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwinjectSimpleExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E21FF4FC984A4DAE7410F11 /* Pods_SwinjectSimpleExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				219466A31D3A2C8A000E41AA /* SwinjectSimpleExample */,
 				219466B81D3A2C8B000E41AA /* SwinjectSimpleExampleTests */,
 				219466A21D3A2C8A000E41AA /* Products */,
+				8C2EB79D91E129868283F99B /* Pods */,
+				492204F73E85903E6A15F884 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +103,23 @@
 			path = SwinjectSimpleExampleTests;
 			sourceTree = "<group>";
 		};
+		492204F73E85903E6A15F884 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3B0CA31626B9B5E64C1B0DF /* Pods_SwinjectSimpleExampleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C2EB79D91E129868283F99B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26D3A7F1AE23FD4F7ED9ADE1 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */,
+				633E3FF272505DF60584EC60 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -120,9 +144,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 219466C11D3A2C8B000E41AA /* Build configuration list for PBXNativeTarget "SwinjectSimpleExampleTests" */;
 			buildPhases = (
+				78F0AE4B7D2039CC0AE0D34C /* 📦 Check Pods Manifest.lock */,
 				219466B11D3A2C8B000E41AA /* Sources */,
 				219466B21D3A2C8B000E41AA /* Frameworks */,
 				219466B31D3A2C8B000E41AA /* Resources */,
+				0D403781294FB13B87C9919C /* 📦 Embed Pods Frameworks */,
+				2CCAAF0D42797D8F1A27D5F0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +218,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D403781294FB13B87C9919C /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CCAAF0D42797D8F1A27D5F0 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78F0AE4B7D2039CC0AE0D34C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2194669D1D3A2C8A000E41AA /* Sources */ = {
@@ -347,6 +422,7 @@
 		};
 		219466C21D3A2C8B000E41AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26D3A7F1AE23FD4F7ED9ADE1 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SwinjectSimpleExampleTests/Info.plist;
@@ -359,6 +435,7 @@
 		};
 		219466C31D3A2C8B000E41AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 633E3FF272505DF60584EC60 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SwinjectSimpleExampleTests/Info.plist;
@@ -388,6 +465,7 @@
 				219466C01D3A2C8B000E41AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		219466C11D3A2C8B000E41AA /* Build configuration list for PBXNativeTarget "SwinjectSimpleExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +474,7 @@
 				219466C31D3A2C8B000E41AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
