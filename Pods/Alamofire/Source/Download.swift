@@ -1,24 +1,26 @@
-// Download.swift
 //
-// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
+//  Download.swift
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 
 import Foundation
 
@@ -62,10 +64,15 @@ extension Manager {
     // MARK: Request
 
     /**
-        Creates a download request using the shared manager instance for the specified method and URL string.
+        Creates a download request for the specified method, URL string, parameters, parameter encoding, headers
+        and destination.
+
+        If `startRequestsImmediately` is `true`, the request will have `resume()` called before being returned.
 
         - parameter method:      The HTTP method.
         - parameter URLString:   The URL string.
+        - parameter parameters:  The parameters. `nil` by default.
+        - parameter encoding:    The parameter encoding. `.URL` by default.
         - parameter headers:     The HTTP headers. `nil` by default.
         - parameter destination: The closure used to determine the destination of the downloaded file.
 
@@ -74,12 +81,16 @@ extension Manager {
     public func download(
         method: Method,
         _ URLString: URLStringConvertible,
+        parameters: [String: AnyObject]? = nil,
+        encoding: ParameterEncoding = .URL,
         headers: [String: String]? = nil,
         destination: Request.DownloadFileDestination)
         -> Request
     {
         let mutableURLRequest = URLRequest(method, URLString, headers: headers)
-        return download(mutableURLRequest, destination: destination)
+        let encodedURLRequest = encoding.encode(mutableURLRequest, parameters: parameters).0
+
+        return download(encodedURLRequest, destination: destination)
     }
 
     /**
@@ -202,6 +213,8 @@ extension Request {
             totalBytesWritten: Int64,
             totalBytesExpectedToWrite: Int64)
         {
+            if initialResponseTime == nil { initialResponseTime = CFAbsoluteTimeGetCurrent() }
+
             if let downloadTaskDidWriteData = downloadTaskDidWriteData {
                 downloadTaskDidWriteData(
                     session,

@@ -13,7 +13,12 @@
 		219466AC1D3A2C8A000E41AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219466AB1D3A2C8A000E41AA /* Assets.xcassets */; };
 		219466AF1D3A2C8A000E41AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 219466AD1D3A2C8A000E41AA /* LaunchScreen.storyboard */; };
 		219466BA1D3A2C8B000E41AA /* SwinjectSimpleExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219466B91D3A2C8B000E41AA /* SwinjectSimpleExampleTests.swift */; };
-		6E21FF4FC984A4DAE7410F11 /* Pods_SwinjectSimpleExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B0CA31626B9B5E64C1B0DF /* Pods_SwinjectSimpleExampleTests.framework */; };
+		219466C51D3A31F8000E41AA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219466C41D3A31F8000E41AA /* City.swift */; };
+		219466C71D3A3255000E41AA /* OpenWeatherMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219466C61D3A3255000E41AA /* OpenWeatherMap.swift */; };
+		219466C91D3A3334000E41AA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219466C81D3A3334000E41AA /* Constants.swift */; };
+		219466CB1D3A3499000E41AA /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219466CA1D3A3499000E41AA /* WeatherFetcher.swift */; };
+		86F0931C520BB162B4E9E4BB /* Pods_SwinjectSimpleExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD10B2127031FDBB1ED0E7B3 /* Pods_SwinjectSimpleExampleTests.framework */; };
+		B28829222A630BE307CE57A2 /* Pods_SwinjectSimpleExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C384ADDAEA491EA89C41B58E /* Pods_SwinjectSimpleExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +42,16 @@
 		219466B51D3A2C8B000E41AA /* SwinjectSimpleExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwinjectSimpleExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		219466B91D3A2C8B000E41AA /* SwinjectSimpleExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectSimpleExampleTests.swift; sourceTree = "<group>"; };
 		219466BB1D3A2C8B000E41AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26D3A7F1AE23FD4F7ED9ADE1 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectSimpleExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		633E3FF272505DF60584EC60 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectSimpleExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		E3B0CA31626B9B5E64C1B0DF /* Pods_SwinjectSimpleExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwinjectSimpleExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		219466C41D3A31F8000E41AA /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		219466C61D3A3255000E41AA /* OpenWeatherMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMap.swift; sourceTree = "<group>"; };
+		219466C81D3A3334000E41AA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		219466CA1D3A3499000E41AA /* WeatherFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
+		4083C5ECB44262308644B2E1 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectSimpleExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD10B2127031FDBB1ED0E7B3 /* Pods_SwinjectSimpleExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwinjectSimpleExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C384ADDAEA491EA89C41B58E /* Pods_SwinjectSimpleExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwinjectSimpleExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C79B387EDF138ECF97B5B56B /* Pods-SwinjectSimpleExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectSimpleExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectSimpleExample/Pods-SwinjectSimpleExample.release.xcconfig"; sourceTree = "<group>"; };
+		C9B86B7159CF397F8FBEE7CA /* Pods-SwinjectSimpleExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectSimpleExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectSimpleExample/Pods-SwinjectSimpleExample.debug.xcconfig"; sourceTree = "<group>"; };
+		FA139A631F1EFDF9CCBB8043 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwinjectSimpleExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28829222A630BE307CE57A2 /* Pods_SwinjectSimpleExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E21FF4FC984A4DAE7410F11 /* Pods_SwinjectSimpleExampleTests.framework in Frameworks */,
+				86F0931C520BB162B4E9E4BB /* Pods_SwinjectSimpleExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,8 +80,8 @@
 				219466A31D3A2C8A000E41AA /* SwinjectSimpleExample */,
 				219466B81D3A2C8B000E41AA /* SwinjectSimpleExampleTests */,
 				219466A21D3A2C8A000E41AA /* Products */,
-				8C2EB79D91E129868283F99B /* Pods */,
-				492204F73E85903E6A15F884 /* Frameworks */,
+				3370B51BF5BB3F1ABBA1C13E /* Pods */,
+				88AB1425D897DF269EA15856 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				219466A41D3A2C8A000E41AA /* AppDelegate.swift */,
+				219466C41D3A31F8000E41AA /* City.swift */,
+				219466C81D3A3334000E41AA /* Constants.swift */,
+				219466C61D3A3255000E41AA /* OpenWeatherMap.swift */,
 				219466A61D3A2C8A000E41AA /* ViewController.swift */,
+				219466CA1D3A3499000E41AA /* WeatherFetcher.swift */,
 				219466A81D3A2C8A000E41AA /* Main.storyboard */,
 				219466AB1D3A2C8A000E41AA /* Assets.xcassets */,
 				219466AD1D3A2C8A000E41AA /* LaunchScreen.storyboard */,
@@ -103,21 +120,24 @@
 			path = SwinjectSimpleExampleTests;
 			sourceTree = "<group>";
 		};
-		492204F73E85903E6A15F884 /* Frameworks */ = {
+		3370B51BF5BB3F1ABBA1C13E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E3B0CA31626B9B5E64C1B0DF /* Pods_SwinjectSimpleExampleTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8C2EB79D91E129868283F99B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				26D3A7F1AE23FD4F7ED9ADE1 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */,
-				633E3FF272505DF60584EC60 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */,
+				C9B86B7159CF397F8FBEE7CA /* Pods-SwinjectSimpleExample.debug.xcconfig */,
+				C79B387EDF138ECF97B5B56B /* Pods-SwinjectSimpleExample.release.xcconfig */,
+				FA139A631F1EFDF9CCBB8043 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */,
+				4083C5ECB44262308644B2E1 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		88AB1425D897DF269EA15856 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD10B2127031FDBB1ED0E7B3 /* Pods_SwinjectSimpleExampleTests.framework */,
+				C384ADDAEA491EA89C41B58E /* Pods_SwinjectSimpleExample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 219466BE1D3A2C8B000E41AA /* Build configuration list for PBXNativeTarget "SwinjectSimpleExample" */;
 			buildPhases = (
+				3D40148419A4156352F28FAC /* 📦 Check Pods Manifest.lock */,
 				2194669D1D3A2C8A000E41AA /* Sources */,
 				2194669E1D3A2C8A000E41AA /* Frameworks */,
 				2194669F1D3A2C8A000E41AA /* Resources */,
+				051E094C496F2938104B09E3 /* 📦 Embed Pods Frameworks */,
+				8ABE5999D5F8FABE1D2CB76A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,12 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 219466C11D3A2C8B000E41AA /* Build configuration list for PBXNativeTarget "SwinjectSimpleExampleTests" */;
 			buildPhases = (
-				78F0AE4B7D2039CC0AE0D34C /* 📦 Check Pods Manifest.lock */,
+				232D43121013ED948B400CCB /* 📦 Check Pods Manifest.lock */,
 				219466B11D3A2C8B000E41AA /* Sources */,
 				219466B21D3A2C8B000E41AA /* Frameworks */,
 				219466B31D3A2C8B000E41AA /* Resources */,
-				0D403781294FB13B87C9919C /* 📦 Embed Pods Frameworks */,
-				2CCAAF0D42797D8F1A27D5F0 /* 📦 Copy Pods Resources */,
+				B8A3784C359886843D24F063 /* 📦 Embed Pods Frameworks */,
+				00A71ECF98D80087C37F8987 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,22 +243,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D403781294FB13B87C9919C /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2CCAAF0D42797D8F1A27D5F0 /* 📦 Copy Pods Resources */ = {
+		00A71ECF98D80087C37F8987 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -250,7 +258,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		78F0AE4B7D2039CC0AE0D34C /* 📦 Check Pods Manifest.lock */ = {
+		051E094C496F2938104B09E3 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwinjectSimpleExample/Pods-SwinjectSimpleExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		232D43121013ED948B400CCB /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,6 +288,51 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		3D40148419A4156352F28FAC /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8ABE5999D5F8FABE1D2CB76A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwinjectSimpleExample/Pods-SwinjectSimpleExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8A3784C359886843D24F063 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwinjectSimpleExampleTests/Pods-SwinjectSimpleExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -272,8 +340,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219466CB1D3A3499000E41AA /* WeatherFetcher.swift in Sources */,
+				219466C91D3A3334000E41AA /* Constants.swift in Sources */,
 				219466A71D3A2C8A000E41AA /* ViewController.swift in Sources */,
 				219466A51D3A2C8A000E41AA /* AppDelegate.swift in Sources */,
+				219466C51D3A31F8000E41AA /* City.swift in Sources */,
+				219466C71D3A3255000E41AA /* OpenWeatherMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +472,7 @@
 		};
 		219466BF1D3A2C8B000E41AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9B86B7159CF397F8FBEE7CA /* Pods-SwinjectSimpleExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwinjectSimpleExample/Info.plist;
@@ -411,6 +484,7 @@
 		};
 		219466C01D3A2C8B000E41AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C79B387EDF138ECF97B5B56B /* Pods-SwinjectSimpleExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwinjectSimpleExample/Info.plist;
@@ -422,7 +496,7 @@
 		};
 		219466C21D3A2C8B000E41AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26D3A7F1AE23FD4F7ED9ADE1 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */;
+			baseConfigurationReference = FA139A631F1EFDF9CCBB8043 /* Pods-SwinjectSimpleExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SwinjectSimpleExampleTests/Info.plist;
@@ -435,7 +509,7 @@
 		};
 		219466C31D3A2C8B000E41AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 633E3FF272505DF60584EC60 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */;
+			baseConfigurationReference = 4083C5ECB44262308644B2E1 /* Pods-SwinjectSimpleExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SwinjectSimpleExampleTests/Info.plist;

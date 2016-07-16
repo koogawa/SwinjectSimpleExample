@@ -1,30 +1,33 @@
-// ServerTrustPolicy.swift
 //
-// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
+//  ServerTrustPolicy.swift
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 
 import Foundation
 
 /// Responsible for managing the mapping of `ServerTrustPolicy` objects to a given host.
 public class ServerTrustPolicyManager {
-    let policies: [String: ServerTrustPolicy]
+    /// The dictionary of policies mapped to a particular host.
+    public let policies: [String: ServerTrustPolicy]
 
     /**
         Initializes the `ServerTrustPolicyManager` instance with the given policies.
@@ -42,7 +45,17 @@ public class ServerTrustPolicyManager {
         self.policies = policies
     }
 
-    func serverTrustPolicyForHost(host: String) -> ServerTrustPolicy? {
+    /**
+        Returns the `ServerTrustPolicy` for the given host if applicable.
+
+        By default, this method will return the policy that perfectly matches the given host. Subclasses could override
+        this method and implement more complex mapping implementations such as wildcards.
+
+        - parameter host: The host to use when searching for a matching policy.
+
+        - returns: The server trust policy for the given host if found.
+    */
+    public func serverTrustPolicyForHost(host: String) -> ServerTrustPolicy? {
         return policies[host]
     }
 }
@@ -117,7 +130,11 @@ public enum ServerTrustPolicy {
     public static func certificatesInBundle(bundle: NSBundle = NSBundle.mainBundle()) -> [SecCertificate] {
         var certificates: [SecCertificate] = []
 
-        for path in bundle.pathsForResourcesOfType(".cer", inDirectory: nil) {
+        let paths = Set([".cer", ".CER", ".crt", ".CRT", ".der", ".DER"].map { fileExtension in
+            bundle.pathsForResourcesOfType(fileExtension, inDirectory: nil)
+        }.flatten())
+
+        for path in paths {
             if let
                 certificateData = NSData(contentsOfFile: path),
                 certificate = SecCertificateCreateWithData(nil, certificateData)
@@ -163,13 +180,13 @@ public enum ServerTrustPolicy {
 
         switch self {
         case let .PerformDefaultEvaluation(validateHost):
-            let policy = validateHost ? SecPolicyCreateSSL(true, host as CFString) : SecPolicyCreateBasicX509()
+            let policy = SecPolicyCreateSSL(true, validateHost ? host as CFString : nil)
             SecTrustSetPolicies(serverTrust, [policy])
 
             serverTrustIsValid = trustIsValid(serverTrust)
         case let .PinCertificates(pinnedCertificates, validateCertificateChain, validateHost):
             if validateCertificateChain {
-                let policy = validateHost ? SecPolicyCreateSSL(true, host as CFString) : SecPolicyCreateBasicX509()
+                let policy = SecPolicyCreateSSL(true, validateHost ? host as CFString : nil)
                 SecTrustSetPolicies(serverTrust, [policy])
 
                 SecTrustSetAnchorCertificates(serverTrust, pinnedCertificates)
@@ -178,14 +195,7 @@ public enum ServerTrustPolicy {
                 serverTrustIsValid = trustIsValid(serverTrust)
             } else {
                 let serverCertificatesDataArray = certificateDataForTrust(serverTrust)
-
-                //======================================================================================================
-                // The following `[] +` is a temporary workaround for a Swift 2.0 compiler error. This workaround should
-                // be removed once the following radar has been resolved:
-                //   - http://openradar.appspot.com/radar?id=6082025006039040
-                //======================================================================================================
-
-                let pinnedCertificatesDataArray = certificateDataForCertificates([] + pinnedCertificates)
+                let pinnedCertificatesDataArray = certificateDataForCertificates(pinnedCertificates)
 
                 outerLoop: for serverCertificateData in serverCertificatesDataArray {
                     for pinnedCertificateData in pinnedCertificatesDataArray {
@@ -200,7 +210,7 @@ public enum ServerTrustPolicy {
             var certificateChainEvaluationPassed = true
 
             if validateCertificateChain {
-                let policy = validateHost ? SecPolicyCreateSSL(true, host as CFString) : SecPolicyCreateBasicX509()
+                let policy = SecPolicyCreateSSL(true, validateHost ? host as CFString : nil)
                 SecTrustSetPolicies(serverTrust, [policy])
 
                 certificateChainEvaluationPassed = trustIsValid(serverTrust)
