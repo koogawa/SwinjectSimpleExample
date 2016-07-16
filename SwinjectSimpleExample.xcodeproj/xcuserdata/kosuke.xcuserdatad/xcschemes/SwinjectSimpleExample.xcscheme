@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "219466A01D3A2C8A000E41AA"
+               BuildableName = "SwinjectSimpleExample.app"
+               BlueprintName = "SwinjectSimpleExample"
+               ReferencedContainer = "container:SwinjectSimpleExample.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "219466B41D3A2C8B000E41AA"
+               BuildableName = "SwinjectSimpleExampleTests.xctest"
+               BlueprintName = "SwinjectSimpleExampleTests"
+               ReferencedContainer = "container:SwinjectSimpleExample.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "219466A01D3A2C8A000E41AA"
+            BuildableName = "SwinjectSimpleExample.app"
+            BlueprintName = "SwinjectSimpleExample"
+            ReferencedContainer = "container:SwinjectSimpleExample.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "219466A01D3A2C8A000E41AA"
+            BuildableName = "SwinjectSimpleExample.app"
+            BlueprintName = "SwinjectSimpleExample"
+            ReferencedContainer = "container:SwinjectSimpleExample.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "219466A01D3A2C8A000E41AA"
+            BuildableName = "SwinjectSimpleExample.app"
+            BlueprintName = "SwinjectSimpleExample"
+            ReferencedContainer = "container:SwinjectSimpleExample.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
