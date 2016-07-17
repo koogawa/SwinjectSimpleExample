@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window.backgroundColor = UIColor.whiteColor()
+        window.makeKeyAndVisible()
+        self.window = window
+
+        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil)
+        window.rootViewController = storyboard.instantiateInitialViewController()
+
         return true
     }
 
