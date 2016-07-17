@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2105F07A1D3B1BB400CFC1BD /* WeatherFetcherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105F0791D3B1BB400CFC1BD /* WeatherFetcherSpec.swift */; };
+		2105F07C1D3B202A00CFC1BD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105F07B1D3B202A00CFC1BD /* Networking.swift */; };
+		2105F07E1D3B205B00CFC1BD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105F07D1D3B205B00CFC1BD /* Network.swift */; };
 		219466A51D3A2C8A000E41AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219466A41D3A2C8A000E41AA /* AppDelegate.swift */; };
 		219466A71D3A2C8A000E41AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219466A61D3A2C8A000E41AA /* ViewController.swift */; };
 		219466AA1D3A2C8A000E41AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 219466A81D3A2C8A000E41AA /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		2105F0791D3B1BB400CFC1BD /* WeatherFetcherSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFetcherSpec.swift; sourceTree = "<group>"; };
+		2105F07B1D3B202A00CFC1BD /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2105F07D1D3B205B00CFC1BD /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		219466A11D3A2C8A000E41AA /* SwinjectSimpleExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwinjectSimpleExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		219466A41D3A2C8A000E41AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		219466A61D3A2C8A000E41AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				219466A41D3A2C8A000E41AA /* AppDelegate.swift */,
 				219466C41D3A31F8000E41AA /* City.swift */,
 				219466C81D3A3334000E41AA /* Constants.swift */,
+				2105F07B1D3B202A00CFC1BD /* Networking.swift */,
+				2105F07D1D3B205B00CFC1BD /* Network.swift */,
 				219466C61D3A3255000E41AA /* OpenWeatherMap.swift */,
 				219466A61D3A2C8A000E41AA /* ViewController.swift */,
 				219466CA1D3A3499000E41AA /* WeatherFetcher.swift */,
@@ -345,10 +351,12 @@
 			files = (
 				219466CB1D3A3499000E41AA /* WeatherFetcher.swift in Sources */,
 				219466C91D3A3334000E41AA /* Constants.swift in Sources */,
+				2105F07E1D3B205B00CFC1BD /* Network.swift in Sources */,
 				219466A71D3A2C8A000E41AA /* ViewController.swift in Sources */,
 				219466A51D3A2C8A000E41AA /* AppDelegate.swift in Sources */,
 				219466C51D3A31F8000E41AA /* City.swift in Sources */,
 				219466C71D3A3255000E41AA /* OpenWeatherMap.swift in Sources */,
+				2105F07C1D3B202A00CFC1BD /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
