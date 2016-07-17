@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -22,12 +21,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
 
-        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil)
+        let container = createContainer()
+        let storyboard = SwinjectStoryboard.create(
+            name: "Main",
+            bundle: nil,
+            container: container)
         window.rootViewController = storyboard.instantiateInitialViewController()
 
         return true
     }
 
+    private func createContainer() -> Container {
+        let container = Container()
+        container.registerForStoryboard(WeatherTableViewController.self) { r, c in
+            c.weatherFetcher = r.resolve(WeatherFetcher.self)
+        }
+        container.register(Networking.self) { _ in Network() }
+        container.register(WeatherFetcher.self) { r in
+            WeatherFetcher(networking: r.resolve(Networking.self)!)
+        }
+        return container
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
