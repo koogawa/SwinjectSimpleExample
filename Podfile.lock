@@ -1,24 +1,24 @@
 PODS:
   - Alamofire (3.4.1)
-  - Nimble (2.0.0-rc.2)
-  - Quick (0.5.1)
+  - Nimble (4.1.0)
+  - Quick (0.9.2)
   - SwiftyJSON (2.3.2)
   - Swinject (0.5)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
-  - Nimble (= 2.0.0-rc.2)
-  - Quick (~> 0.5.0)
+  - Nimble
+  - Quick
   - SwiftyJSON (~> 2.0)
   - Swinject (~> 0.2)
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  Nimble: e3cf5e73a491daf21c2bc88783dbfc55ce8b8e02
-  Quick: 7426537a99e75076d6930c5b6da58006e4a9f38a
+  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
+  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   Swinject: 0bf92c3336808a69d162bcf8f338774640de518a
 
-PODFILE CHECKSUM: f7ba87d227f65c0fa5edc07570f2ed196da4d268
+PODFILE CHECKSUM: a7fe89ca4d289a97ef3185be1b0f0990c370d18a
 
 COCOAPODS: 1.0.0
